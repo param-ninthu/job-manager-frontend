@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import api from "./../api/axiosConfig";
 import "./../assets/css/jobsScreen.css";
+import { Link } from "react-router-dom";
 
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ErrorIcon from "@mui/icons-material/Error";
 import CancelIcon from "@mui/icons-material/Cancel";
+import ReadMoreIcon from "@mui/icons-material/ReadMore";
 
 const JobsScreen = () => {
   const [jobs, setJobs] = useState([]);
@@ -33,10 +35,11 @@ const JobsScreen = () => {
   }, [currentPage, size]);
 
   const handlePrevPage = () => {
-    if (currentPage < 0) {
+    if (currentPage < 1) {
       setCurrentPage(0);
+    } else {
+      setCurrentPage(currentPage - 1);
     }
-    setCurrentPage(currentPage - 1);
   };
 
   const handleNextPage = () => {
@@ -92,26 +95,45 @@ const JobsScreen = () => {
           <thead className="table_head">
             <tr className="table_row">
               <th className="icon"></th>
-
               <th>Job Owner</th>
               <th>Job Name</th>
               <th>Job Status</th>
+              <th className="icon"> </th>
             </tr>
           </thead>
           <tbody className="table_body">
             {jobs.map((job) => (
               <tr className="table_row" key={job.id}>
                 <td className="icon"> {renderJobStatusIcon(job.jobStatus)}</td>
-
                 <td>{job.owner}</td>
                 <td>{job.name}</td>
                 <td>{renderJobStatusColor(job.jobStatus)}</td>
+                <td className="icon">
+                  <Link to={`/${job.id}`} className="link">
+                    <ReadMoreIcon />
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
       <div className="footer">
+        <div className="size">
+          <select
+            className="select"
+            onChange={(e) => {
+              setSize(e.target.value);
+              setCurrentPage(0);
+            }}
+          >
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+
+            <option value="100">100</option>
+          </select>
+        </div>
         <div className="buttons">
           <div onClick={handlePrevPage} className="arrow">
             {" "}

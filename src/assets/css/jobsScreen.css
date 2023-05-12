@@ -3,9 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  max-height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 .title{
@@ -16,7 +15,7 @@
 
 .table_container{
     width: 100%;
-    height: 100%;
+    max-height: 100% !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,12 +23,11 @@
 
 .table{
     width: 100%;
-    height: 100%;
+    max-height: 100% !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
 }
 
 .table_row{
@@ -41,7 +39,7 @@
 }
 
 .table_head{
-    display: flex;
+    display: block;
     justify-content: left;
     align-items: center;
     flex-direction:row;
@@ -52,13 +50,14 @@
 }
 
 .table_body{
-    display: flex;
+    display: block;
     justify-content: left;
     align-items: center;
     flex-direction:column;
     width: 100%;
-    height: 100%;
+    height: 90%;
     background-color: #e5e5e5;
+    overflow-y: auto;
    
 }
 
@@ -91,11 +90,12 @@ td{
 }
 
 .footer{
-    width: 100%;
+    width: 70%;
     height: 100px;
     display: flex;
-    flex-direction:row-reverse;
-
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
     background-color: #fff;
     margin-top: 20px;
 }
@@ -125,6 +125,7 @@ td{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .status-icon{
@@ -180,4 +181,29 @@ td{
     font-weight: 500;
     width:100px
 
+}
+
+.size{
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    width: 200px;
+    height: 40px;
+    background-color:#e5e5e5;
+    border-radius: 5px;
+}
+
+.select{
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    margin-right: 5px;
+    padding-left: 20px;
+}
+
+.link{
+    text-decoration: none;
+    color: #115acf;
 }

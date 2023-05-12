@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -11,7 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" exact element={<JobsScreen />}></Route>
-          <Route path="/ex" element={<ExpandJobScreen />}></Route>
+          <Route path="/:id" element={<ExpandJobScreen />}></Route>
         </Routes>
       </Router>
     </>
