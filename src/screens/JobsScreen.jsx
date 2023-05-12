@@ -54,7 +54,7 @@ const JobsScreen = () => {
       case "Completed":
         return <CheckCircleIcon className="status-icon completed" />;
       case "Failed":
-        return <ErrorIcon className="status-icon error" />;
+        return <ErrorIcon className="status-icon failed" />;
       case "Cancelled":
         return <CancelIcon className="status-icon cancelled" />;
       default:
