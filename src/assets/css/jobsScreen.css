@@ -34,7 +34,7 @@
 
 .table_row{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction:row;
     width: 100%;
@@ -71,7 +71,7 @@ th{
     color: #000;
     width: 200px;
     height: 40px;
-    background-color:#ffffff;
+    background-color:#e5e5e5;
     margin-right: 5px;
     padding-left: 20px;
 }
@@ -84,7 +84,6 @@ td{
     font-weight: 500;
     width: 200px;
     height: 40px;
-    background-color: #e5e5e5;
     margin-right: 5px;
     padding-left: 20px;
     margin-top: 5px;
@@ -96,8 +95,89 @@ td{
     height: 100px;
     display: flex;
     flex-direction:row-reverse;
-    justify-content: center;
-    align-items: center;
+
     background-color: #fff;
     margin-top: 20px;
+}
+
+
+.subtitle{
+    font-size: 1rem;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px
+    ;
+}
+
+.arrow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-color: transparent;
+}
+
+.completed{
+    color: #66d866;
+}
+
+.error{
+    color: #bc4d4d;
+}
+
+.cancelled{
+    color: #ffcc00;
+}
+
+.icon{
+    width:30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    display: flex;
+
+}
+
+.status-completed{
+    border-radius: 5px;
+    background-color: #66d86655;
+    padding: 5px;
+    font-weight: 500;
+    width:100px
+}
+
+.status-error{
+    border-radius: 5px;
+    background-color: #bc4d4d55;
+    padding: 5px;
+    font-weight: 500;
+    width:100px
+
+}
+
+.status-cancelled{
+    border-radius: 5px;
+    background-color: #ffcc0055;
+    padding: 5px;
+    font-weight: 500;
+    width:100px
+
 }
