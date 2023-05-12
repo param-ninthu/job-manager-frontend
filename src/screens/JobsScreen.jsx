@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import api from "./../api/axiosConfig";
+import "./../assets/css/jobsScreen.css";
+
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 
 const JobsScreen = () => {
   const [jobs, setJobs] = useState([]);
-  const [size, setSize] = useState(20); // default size
+  const [size, setSize] = useState(10); // default size
   const [page, setPage] = useState(0); // default page
   const [totalPages, setTotalPages] = useState(0); // default totalPages
   const [currentPage, setCurrentPage] = useState(0); // default currentPage
@@ -40,21 +44,21 @@ const JobsScreen = () => {
   };
 
   return (
-    <div>
-      <h1>Jobs</h1>
-      <div>
-        <table>
-          <thead>
-            <tr>
+    <div className="container">
+      <h1 className="title">Jobs</h1>
+      <div className="table_container">
+        <table className="table">
+          <thead className="table_head">
+            <tr className="table_row">
               <th>Job Status</th>
               <th>Job Name</th>
               <th>Job Owner</th>
               <th>Job Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="table_body">
             {jobs.map((job) => (
-              <tr key={job.id}>
+              <tr className="table_row" key={job.id}>
                 <td>{job.jobStatus}</td>
                 <td>{job.name}</td>
                 <td>{job.owner}</td>
@@ -64,9 +68,18 @@ const JobsScreen = () => {
           </tbody>
         </table>
       </div>
-      <div>
-        <div onClick={handlePrevPage}> - </div>
-        <div onClick={handleNextPage}> + </div>
+      <div className="footer">
+        <div onClick={handleNextPage}>
+          {" "}
+          <KeyboardDoubleArrowRightIcon />{" "}
+        </div>
+        <div className="subtitle">
+          {currentPage + 1} of {totalPages}
+        </div>
+        <div onClick={handlePrevPage}>
+          {" "}
+          <KeyboardDoubleArrowLeftIcon />{" "}
+        </div>
       </div>
     </div>
   );
