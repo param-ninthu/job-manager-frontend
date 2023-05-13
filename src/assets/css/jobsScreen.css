@@ -42,6 +42,10 @@
     width: 100%;
 }
 
+.table_body .table_row:hover {
+    background-color: #e5e5e5;
+}
+
 .table_head {
     display: flex;
     justify-content: left;
@@ -49,7 +53,7 @@
     flex-direction:row;
     width: 100%;
     height: 40px;
-    background-color: #ffffff;
+    background-color: #e5e5e5 !important;
  
 }
 
@@ -91,6 +95,7 @@ td {
     padding-left: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
+    background-color: transparent;
 }
 
 .footer{
@@ -147,7 +152,7 @@ td {
 }
 
 .cancelled{
-    color: #ffb300;
+    color: #FFE15D;
 }
 
 .icon{
@@ -177,7 +182,7 @@ td {
 
 .status-cancelled{
     border-radius: 5px;
-    background-color: #ffb30055;
+    background-color: #FFE15D55;
     padding: 5px;
     font-weight: 500;
     width:100px
@@ -203,9 +208,14 @@ td {
     padding-left: 20px;
 }
 
+.icon-bg{
+    background-color: transparent;
+}
+
 .link{
     text-decoration: none;
     color: #115acf;
+    background-color: transparent;
 }
 
 

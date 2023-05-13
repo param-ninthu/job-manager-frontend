@@ -187,7 +187,7 @@ const JobsScreen = () => {
                 <td>{renderJobStatusColor(job.jobStatus)}</td>
                 <td className="icon">
                   <Link to={`/${job.id}`} className="link">
-                    <ReadMoreIcon />
+                    <ReadMoreIcon className="icon-bg" />
                   </Link>
                 </td>
               </tr>
