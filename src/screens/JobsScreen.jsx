@@ -73,7 +73,7 @@ const JobsScreen = () => {
       case "Failed":
         return (
           <>
-            <div className="status-error error"> {jobStatus} </div>
+            <div className="status-failed failed"> {jobStatus} </div>
           </>
         );
       case "Cancelled":

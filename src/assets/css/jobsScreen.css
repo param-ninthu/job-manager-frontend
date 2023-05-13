@@ -139,7 +139,7 @@ td{
     color: #66d866;
 }
 
-.error{
+.failed{
     color: #bc4d4d;
 }
 
@@ -165,7 +165,7 @@ td{
     width:100px
 }
 
-.status-error{
+.status-failed{
     border-radius: 5px;
     background-color: #bc4d4d55;
     padding: 5px;
