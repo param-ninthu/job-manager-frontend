@@ -5,16 +5,20 @@ import { Link } from "react-router-dom";
 
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ErrorIcon from "@mui/icons-material/Error";
 import CancelIcon from "@mui/icons-material/Cancel";
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
+import SearchIcon from "@mui/icons-material/Search";
 
 import user_1 from "./../assets/icons/user_1.png";
 import user_2 from "./../assets/icons/user_2.png";
 import user_3 from "./../assets/icons/user_3.png";
 import user_4 from "./../assets/icons/user_4.png";
 import def from "./../assets/icons/def.png";
+import search from "./../assets/icons/search.png";
 
 const JobsScreen = () => {
   const [jobs, setJobs] = useState([]);
@@ -54,6 +58,14 @@ const JobsScreen = () => {
       setCurrentPage(totalPages);
     }
     setCurrentPage(currentPage + 1);
+  };
+
+  const handleFirstPage = () => {
+    setCurrentPage(0);
+  };
+
+  const handleLastPage = () => {
+    setCurrentPage(totalPages - 1);
   };
 
   const handleSearch = (event) => {
@@ -139,13 +151,19 @@ const JobsScreen = () => {
   return (
     <div className="container">
       <div className="table_container">
-        <div>
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={handleSearch}
-            placeholder="Search by job name"
-          />
+        <div className="searchbar">
+          <div className="input-icon">
+            <SearchIcon />
+          </div>
+          <div className="input-field">
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={handleSearch}
+              placeholder="Search by job name"
+              className="input-field"
+            />
+          </div>
         </div>
         <table className="table">
           <thead className="table_head">
@@ -194,15 +212,23 @@ const JobsScreen = () => {
           </select>
         </div>
         <div className="buttons">
-          <div onClick={handlePrevPage} className="arrow">
+          <div onClick={handleFirstPage} className="arrow">
             {" "}
             <KeyboardDoubleArrowLeftIcon />{" "}
+          </div>
+          <div onClick={handlePrevPage} className="arrow">
+            {" "}
+            <KeyboardArrowLeftIcon />{" "}
           </div>
 
           <div className="subtitle">
             {currentPage + 1} of {totalPages}
           </div>
           <div onClick={handleNextPage} className="arrow">
+            {" "}
+            <KeyboardArrowRightIcon />{" "}
+          </div>
+          <div onClick={handleLastPage} className="arrow">
             {" "}
             <KeyboardDoubleArrowRightIcon />{" "}
           </div>
