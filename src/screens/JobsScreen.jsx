@@ -10,7 +10,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ErrorIcon from "@mui/icons-material/Error";
 import CancelIcon from "@mui/icons-material/Cancel";
-import ReadMoreIcon from "@mui/icons-material/ReadMore";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import SearchIcon from "@mui/icons-material/Search";
 
 import user_1 from "./../assets/icons/user_1.png";
@@ -187,7 +187,7 @@ const JobsScreen = () => {
                 <td>{renderJobStatusColor(job.jobStatus)}</td>
                 <td className="icon">
                   <Link to={`/${job.id}`} className="link">
-                    <ReadMoreIcon className="icon-bg" />
+                    <OpenInNewIcon className="icon-bg" />
                   </Link>
                 </td>
               </tr>
