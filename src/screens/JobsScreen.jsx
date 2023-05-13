@@ -10,18 +10,25 @@ import ErrorIcon from "@mui/icons-material/Error";
 import CancelIcon from "@mui/icons-material/Cancel";
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
 
+import user_1 from "./../assets/icons/user_1.png";
+import user_2 from "./../assets/icons/user_2.png";
+import user_3 from "./../assets/icons/user_3.png";
+import user_4 from "./../assets/icons/user_4.png";
+import def from "./../assets/icons/def.png";
+
 const JobsScreen = () => {
   const [jobs, setJobs] = useState([]);
   const [size, setSize] = useState(10); // default size
   const [page, setPage] = useState(0); // default page
   const [totalPages, setTotalPages] = useState(0); // default totalPages
   const [currentPage, setCurrentPage] = useState(0); // default currentPage
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const getJobs = async () => {
       try {
         const response = await api.get(
-          `/jobs?size=${size}&page=${currentPage}`
+          `/jobs?size=${size}&page=${currentPage}&search=${searchTerm}`
         );
         setTotalPages(response.data.totalPages);
         setJobs(response.data.content);
@@ -32,7 +39,7 @@ const JobsScreen = () => {
     };
 
     getJobs();
-  }, [currentPage, size]);
+  }, [currentPage, size, searchTerm]);
 
   const handlePrevPage = () => {
     if (currentPage < 1) {
@@ -47,6 +54,11 @@ const JobsScreen = () => {
       setCurrentPage(totalPages);
     }
     setCurrentPage(currentPage + 1);
+  };
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(0);
   };
 
   const renderJobStatusIcon = (jobStatus) => {
@@ -87,15 +99,59 @@ const JobsScreen = () => {
     }
   };
 
+  const renderUserIcon = (user) => {
+    switch (user) {
+      case "Dilhara Wijetunga":
+        return (
+          <>
+            <img src={user_1} alt="user_1" className="usericon" />
+          </>
+        );
+      case "Kevin Bird":
+        return (
+          <>
+            <img src={user_2} alt="user_2" className="usericon" />
+          </>
+        );
+      case "Buddhi Nimali Siripala":
+        return (
+          <>
+            {" "}
+            <img src={user_3} alt="user_3" className="usericon" />
+          </>
+        );
+      case "Piyum Monarawila":
+        return (
+          <>
+            <img src={user_4} alt="user_4" className="usericon" />
+          </>
+        );
+      default:
+        return (
+          <>
+            {" "}
+            <img src={def} alt="default" className="usericon" />
+          </>
+        );
+    }
+  };
+
   return (
     <div className="container">
-      <h1 className="title">Jobs</h1>
       <div className="table_container">
+        <div>
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={handleSearch}
+            placeholder="Search by job name"
+          />
+        </div>
         <table className="table">
           <thead className="table_head">
             <tr className="table_row">
               <th className="icon"></th>
-              <th>Job Owner</th>
+              <th className="owner-details">Job Owner</th>
               <th>Job Name</th>
               <th>Job Status</th>
               <th className="icon"> </th>
@@ -105,7 +161,10 @@ const JobsScreen = () => {
             {jobs.map((job) => (
               <tr className="table_row" key={job.id}>
                 <td className="icon"> {renderJobStatusIcon(job.jobStatus)}</td>
-                <td>{job.owner}</td>
+                <td className="owner-details">
+                  {" "}
+                  {renderUserIcon(job.owner)} {job.owner}
+                </td>
                 <td>{job.name}</td>
                 <td>{renderJobStatusColor(job.jobStatus)}</td>
                 <td className="icon">

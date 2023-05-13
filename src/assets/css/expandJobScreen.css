@@ -4,7 +4,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
+}
+
+.container_header{
+    width: 65%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.container_header_left{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    column-gap: 5px;
+
 }
 
 .primary_container{
@@ -15,6 +34,7 @@
     align-items: center;
     color: #000;
     border-radius: 10px;   
+    margin-top: 60px;
 }
 
 .primary_container h1{
@@ -48,7 +68,7 @@
 .jobtitle{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: transparent;
     width: 200px;
     height: 100%;
@@ -133,7 +153,6 @@
 
 .primary_container_body_left{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     background-color: transparent;
@@ -152,8 +171,8 @@
 
 
 .usericon{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
     background-color: transparent;
 }
@@ -162,12 +181,12 @@
     display: flex;  
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     background-color: transparent;
     width: auto;
     color: #fff;
-    background-color: rgb(54, 143, 233);
+    background-color: rgba(54, 144, 233, 0.715);
     border-radius: 5px;
     padding:5px;
 }
@@ -178,23 +197,25 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    column-gap: 10px;
     justify-content: space-between;
     background-color: transparent;
-    margin-top: 15px;
+    border-bottom: 1px solid #000;
 }
 
 .primary_container_body_bottom_content{
-    width: 90%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     background-color: transparent;
     align-items: center;
     justify-content: center;
+
 }
 
 .primary_container_body_bottom_content_header{
-    width: 200px;
+    width: 100%;
     height: 40px;
     display: flex;
     align-items: center;
@@ -214,4 +235,26 @@
     background-color: transparent;
     align-items: center;
     justify-content: center;
+}
+
+.linkL{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: rgba(54, 144, 233, 0.715);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.linkR{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
 }

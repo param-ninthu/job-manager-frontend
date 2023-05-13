@@ -8,29 +8,32 @@
 }
 
 .title{
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
+   display: flex;
+   flex-direction: row;
+   width: 50%;
+   font-size: 20px;
+   font-weight: 600;
 }
 
-.table_container{
+.table_container {
     width: 100%;
-    max-height: 100% !important;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 40px;
+    overflow: auto;
 }
 
-.table{
+.table {
     width: 100%;
-    max-height: 100% !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.table_row{
+.table_row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +41,7 @@
     width: 100%;
 }
 
-.table_head{
+.table_head {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -49,7 +52,7 @@
  
 }
 
-.table_body{
+.table_body {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -57,10 +60,11 @@
     width: 100%;
     height: 90%;
     background-color: #e5e5e5;
+    margin-top: 20px;
    
 }
 
-th{
+th {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -74,7 +78,7 @@ th{
     padding-left: 20px;
 }
 
-td{
+td {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -89,7 +93,6 @@ td{
 }
 
 .footer{
-    position: relative;
     width: 70%;
     height: 100px;
     display: flex;
@@ -101,7 +104,7 @@ td{
 }
 
 
-.subtitle{
+.subtitle {
     font-size: 1rem;
     font-weight: 600;
     justify-content: center;
@@ -111,16 +114,15 @@ td{
     padding: 2px;
 }
 
-.buttons{
+.buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 200px
-    ;
+    width: 200px;
 }
 
-.arrow{
+.arrow {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -154,7 +156,6 @@ td{
     justify-content: center;
     background-color: transparent;
     display: flex;
-
 }
 
 .status-completed{
@@ -179,7 +180,6 @@ td{
     padding: 5px;
     font-weight: 500;
     width:100px
-
 }
 
 .size{
@@ -205,4 +205,9 @@ td{
 .link{
     text-decoration: none;
     color: #115acf;
+}
+
+
+.owner-details{
+    width: 300px;
 }
