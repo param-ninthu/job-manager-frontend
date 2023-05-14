@@ -1,6 +1,12 @@
-# Job list with Pagination
+# Job Manager - Front end
 
 This program is designed to retrieve job data from a REST API, fetch the data by pages, and display it in a table.
+
+## Requirements
+
+- Backend with proper database connection [Job Manager Backend]("https://github.com/param-ninthu/job-manager-backend")
+
+- Node
 
 ## Installation
 
@@ -31,7 +37,3 @@ Example :
 ![ALT img](./src/assets/images/2.png)
 
 User or a certain organization can view the status of the job which was assigned to the employees. Meanwhile he/she can filter the jobs using job name.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
